@@ -1,10 +1,69 @@
-.navbar {
-    border-bottom: 1px rgb(192, 192, 192);
+* {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    margin-left: 5vw;
+    margin-right: 25px;
     font-size: bold;
+    display: flex;
 }
 
 .navParent {
-    margin-left: 25px;
-    margin-right: 25px;
+    border-bottom: 1px rgb(229	232	235) solid;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+.registerForm {
+    display: flex;
+    justify-content: center;
+}
+
+.under {
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm h1 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.registerForm label {
+    color: #61758A;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.registerForm input {
+    background-color: #F0F2F6;
+    border-radius: 5px;
+    width: 305px;
+    height: 40px;
+    padding-left: 15px;
+    border: none;
+}
+
+.between {
+    margin: 30px 0px 10px 0px;
+}
+
+input[type="submit"] {
+    background-color: #0D80F2 !important;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    width: 325px !important;
+}
+
+.between p {
+    color: #0D80F2;
+    font-weight: bold;
+    text-decoration: underline;
 }
