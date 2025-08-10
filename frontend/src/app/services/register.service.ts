@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable, ViewChild } from '@angular/core';
 import { ValidationErrors, FormGroup } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +13,11 @@ export class RegisterCheck {
   emailWarning = '';
   phoneWarning = '';
   passwordWarning = '';
+  @ViewChild('passwordInput') passwordInput!: ElementRef<HTMLInputElement>;
+
 
   public NameChecker(errors: ValidationErrors | null, key: string) {
-    
+
     if (key === 'firstname') {
       this.firstnameWarning = '';
 
@@ -23,7 +26,7 @@ export class RegisterCheck {
         if (errors['required']) {
           this.firstnameWarning = 'Input cannot be empty!';
         } else if(errors['pattern']) {          
-          this.firstnameWarning = 'Input cannot have numbers!';
+          this.firstnameWarning = 'Input cannot have numbers or special characters!';
         }
       }
     } else {
@@ -33,7 +36,7 @@ export class RegisterCheck {
         if (errors['required']) {
           this.lastnameWarning = 'Input cannot be empty!';
         }  else if(errors['pattern']) {
-          this.lastnameWarning = 'Input cannot have numbers!';
+          this.lastnameWarning = 'Input cannot have numbers or special characters!';
         }
       }
     }
@@ -89,4 +92,12 @@ export class RegisterCheck {
         ?.setValue(value.trim(), { emitEvent: false });
     });
   }
+
+   public showPass(inputHTML: any) {
+      if (inputHTML.type === "password") {
+        inputHTML.setAttribute("type", "text");
+      } else {
+        inputHTML.setAttribute("type", "password");
+      }
+    }
 }

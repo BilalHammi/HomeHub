@@ -32,9 +32,10 @@
             <div class="under between">
                 <label for="password">Password</label>
                 <div class="input-icon-wrapper">
-                    <input type="password" name="password" placeholder="Enter your password" formControlName="password">
-                    <p *ngIf="passwordWarning" id="warning"> {{ passwordWarning }}</p>
+                    <fa-icon [icon]="faLockIcon" class="icon" (click)="showPassService(passwordInput)"></fa-icon>
+                    <input #passwordInput type="password" name="password" placeholder="Enter your password" formControlName="password">
                 </div>
+                 <p *ngIf="passwordWarning" id="warning"> {{ passwordWarning }}</p>
             </div>
              <div class="between under">
                 <input type="submit" value="Register">

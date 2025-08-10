@@ -74,3 +74,17 @@ input[type="submit"] {
     text-decoration: none;
     margin-bottom: 0px;
 }
+.input-icon-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.input-icon-wrapper .icon {
+    position: absolute;
+    padding-right: 30px;
+    margin-top: 8px;
+}
+
+p {
+    margin-top: 10px;
+}

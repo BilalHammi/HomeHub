@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterCheck } from '../services/register.service';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 import {
   FormBuilder,
   FormGroup,
-  ReactiveFormsModule,
+  ReactiveFormsModule,  
   Validators,
 } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
 
 //
 
@@ -16,9 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-register',
   imports: [
     CommonModule,
-    MatSlideToggleModule,
-    MatIconModule,
     ReactiveFormsModule,
+    FontAwesomeModule
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
@@ -30,11 +29,12 @@ export class RegisterComponent {
   lastnameWarning = '';
   emailWarning = '';
   registerForm: FormGroup;
+  faLockIcon = faLock;
 
   constructor(private fb: FormBuilder, private registerService: RegisterCheck) {
     this.registerForm = this.fb.group({
-      firstname: ['', [Validators.required, Validators.pattern(/^[^0-9]*$/)]],
-      lastname: ['', [Validators.required, Validators.pattern(/^[^0-9]*$/)]],
+      firstname: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
+      lastname: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
       email: ['', [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)]],
       password: [
         '',
@@ -82,4 +82,9 @@ export class RegisterComponent {
       });
     }
   }
+
+  showPassService(inputHTML: any) {
+    this.registerService.showPass(inputHTML);
+  }
+  
 }
