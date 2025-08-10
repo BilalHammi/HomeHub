@@ -14,19 +14,15 @@ export class RegisterCheck {
   passwordWarning = '';
 
   public NameChecker(errors: ValidationErrors | null, key: string) {
-    console.log(key);
     
     if (key === 'firstname') {
       this.firstnameWarning = '';
 
       if (errors) {
-        console.log(errors);
         
         if (errors['required']) {
           this.firstnameWarning = 'Input cannot be empty!';
-        } else if(errors['pattern']) {
-          console.log("Ik ben un de oattern");
-          
+        } else if(errors['pattern']) {          
           this.firstnameWarning = 'Input cannot have numbers!';
         }
       }
@@ -59,8 +55,6 @@ export class RegisterCheck {
     this.phoneWarning = '';
 
     if (errors) {
-      console.log('Errors object:', errors);
-
       if (errors['required']) {
         this.phoneWarning = 'Phonenumber cannot be empty!';
       } else if (errors['pattern']) {
