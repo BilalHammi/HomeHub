@@ -63,8 +63,6 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       console.log('Form is valid!', this.registerForm.value);
     } else {
-      console.log('Form is invalid!');
-
       Object.keys(this.registerForm.controls).forEach((key) => {
         const control = this.registerForm.get(key);
         if (key === 'phonenumber') {
@@ -77,8 +75,6 @@ export class RegisterComponent {
           this.registerService.EmailCheck(control?.errors ?? null);
           this.emailWarning = this.registerService.emailWarning;
         } else if (key === 'firstname' || key === 'lastname') {
-          console.log(control?.errors);
-
           this.registerService.NameChecker(control?.errors ?? null, key);
           this.firstnameWarning = this.registerService.firstnameWarning;
           this.lastnameWarning = this.registerService.lastnameWarning;
