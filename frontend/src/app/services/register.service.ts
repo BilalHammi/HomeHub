@@ -88,13 +88,11 @@ export class RegisterCheck {
   }
 
   public trimFunction(trimValue: FormGroup) {
-    console.log(trimValue);
     Object.keys(trimValue.controls).forEach((key) => {
       const value = trimValue.get(key)?.value || '';
       trimValue
         .get(key)
         ?.setValue(value.trim(), { emitEvent: false });
-      console.log(value.length);
     });
   }
 }
