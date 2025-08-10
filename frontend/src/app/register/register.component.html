@@ -2,36 +2,44 @@
     <section class="navParent">
         <nav class="navbar">
             <h1>HouseHub</h1>
-            <img src="../assets/logo.png" alt="">
         </nav>
     </section>
     <section class="registerForm">
-        <div class="under">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="under">
             <h1>Create your account</h1>
             <div class="under between">
                 <label for="firstname">Firstname</label>
-                <input type="text" name="firstname" placeholder="Enter your firstname">
+                <input type="text" name="firstname" placeholder="Enter your firstname" formControlName="firstname">
+                <p *ngIf="firstnameWarning" id="warning"> {{ firstnameWarning }}</p>
+
             </div>
             <div class="under between">
                 <label for="lastname">Lastname</label>
-                <input type="text" name="lastname" placeholder="Enter your lastname">
+                <input type="text" name="lastname" placeholder="Enter your lastname" formControlName="lastname">
+                <p *ngIf="lastnameWarning" id="warning"> {{ lastnameWarning }}</p>
+
             </div>
             <div class="under between">
-                <label for="e-mail">E-mail</label>
-                <input type="text" name="e-mail" placeholder="Enter your e-mail">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" placeholder="Enter your e-mail" formControlName="email">
+                <p *ngIf="emailWarning" id="warning"> {{ emailWarning }}</p>
             </div>
             <div class="under between">
                 <label for="phonenumber">Phonenumber</label>
-                <input type="text" name="phonenumber" placeholder="Enter your phonenumber">
+                <input type="text" name="phonenumber" placeholder="Enter your phonenumber" formControlName="phonenumber">
+                <p *ngIf="phoneWarning" id="warning"> {{ phoneWarning }}</p>
             </div>
             <div class="under between">
                 <label for="password">Password</label>
-                <input type="text" name="password" placeholder="Enter your password">
+                <div class="input-icon-wrapper">
+                    <input type="password" name="password" placeholder="Enter your password" formControlName="password">
+                    <p *ngIf="passwordWarning" id="warning"> {{ passwordWarning }}</p>
+                </div>
             </div>
              <div class="between under">
                 <input type="submit" value="Register">
                 <p>Already have an account? <a href="#">Click here!</a></p>
             </div>
-        </div>
+        </form>
     </section>
 </section>

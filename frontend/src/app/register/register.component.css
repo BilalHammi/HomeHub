@@ -67,3 +67,10 @@ input[type="submit"] {
     font-weight: bold;
     text-decoration: underline;
 }
+
+#warning {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 0px;
+}
