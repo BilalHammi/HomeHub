@@ -74,17 +74,50 @@ input[type="submit"] {
     text-decoration: none;
     margin-bottom: 0px;
 }
-.input-icon-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-}
 
 .input-icon-wrapper .icon {
     position: absolute;
+    margin-left: 13%;
     padding-right: 30px;
     margin-top: 8px;
 }
 
 p {
     margin-top: 10px;
+}
+.password-wrapper {
+    position: relative;
+    width: 305px;
+    height: 40px;
+}
+
+.password-wrapper input {
+    padding-left: 15px;
+    padding-right: 44px;
+    background: #F0F2F6;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.password-wrapper .icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.password-wrapper #warning {
+    top: 100%;
+    left: 0;
+}
+
+.password-wrapper input {
+    width: 325px !important;
+}
+input[type="submit"] {
+    margin-top: 25px;
+    cursor: pointer;
 }

@@ -77,7 +77,7 @@ export class RegisterCheck {
       if (errors['required']) {
         this.passwordWarning = 'Password cannot be empty!';
       } else if (errors['minlength']) {
-        this.passwordWarning = `Password must be at least ${errors['minlength'].requiredLength} digits! (currently ${errors['minlength'].actualLength})`;
+        this.passwordWarning = `Password must be at least ${errors['minlength'].requiredLength} characters! (currently ${errors['minlength'].actualLength})`;
       } else if (errors['pattern']) {
         this.passwordWarning = `There must be atleast 1 special character!`;
       }
@@ -93,7 +93,7 @@ export class RegisterCheck {
     });
   }
 
-   public showPass(inputHTML: any) {
+   public showPass(inputHTML: any) {    
       if (inputHTML.type === "password") {
         inputHTML.setAttribute("type", "text");
       } else {
