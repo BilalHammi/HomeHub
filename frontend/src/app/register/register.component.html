@@ -1,9 +1,5 @@
 <section>
-    <section class="navParent">
-        <nav class="navbar">
-            <h1>HouseHub</h1>
-        </nav>
-    </section>
+    <app-navbar type="admin"></app-navbar>
     <section class="registerForm">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="under">
             <h1>Create your account</h1>
@@ -33,8 +29,8 @@
                 <label for="password">Password</label>
                 <div class="password-wrapper">
                     <div class="test">
-                        <fa-icon [icon]="faLockIcon" class="icon" (click)="showPassService(passwordInput)"></fa-icon>
-                        <input #passwordInput type="password" name="password" placeholder="Enter your password" formControlName="password">
+                    <fa-icon [icon]="faLockIcon" class="icon" (click)="showPassService(passwordInput)"></fa-icon>
+                    <input #passwordInput type="password" name="password" placeholder="Enter your password" formControlName="password">
                     </div>
                     <p *ngIf="passwordWarning" id="warning"> {{ passwordWarning }}</p>
                 </div>

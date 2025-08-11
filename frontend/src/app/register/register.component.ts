@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterCheck } from '../services/register.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { NavbarComponent } from '../navbar/navbar.component';
 import {
   FormBuilder,
   FormGroup,
@@ -17,7 +18,8 @@ import {
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NavbarComponent
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
@@ -35,7 +37,7 @@ export class RegisterComponent {
     this.registerForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
       lastname: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
-      email: ['', [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)]],
+      email: ['', [Validators.required, Validators.email]],
       password: [
         '',
         [
@@ -48,8 +50,8 @@ export class RegisterComponent {
         '',
         [
           Validators.required,
-          Validators.maxLength(10),
           Validators.minLength(10),
+          Validators.maxLength(10),
           Validators.pattern('^[0-9]*$'),
         ],
       ],

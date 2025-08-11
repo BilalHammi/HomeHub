@@ -93,7 +93,9 @@ export class RegisterCheck {
     });
   }
 
-   public showPass(inputHTML: any) {    
+   public showPass(inputHTML: any) {  
+    console.log(inputHTML.length);
+      
       if (inputHTML.type === "password") {
         inputHTML.setAttribute("type", "text");
       } else {
