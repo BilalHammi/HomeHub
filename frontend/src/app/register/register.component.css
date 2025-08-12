@@ -51,7 +51,7 @@ input[type="submit"] {
     width: 325px !important;
 }
 
-.between p {
+.between a {
     color: #0D80F2;
     font-weight: bold;
     text-decoration: underline;

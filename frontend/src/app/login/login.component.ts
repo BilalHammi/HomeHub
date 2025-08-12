@@ -13,7 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
     NavbarComponent],
   templateUrl: './login.component.html',
-  styleUrl: '../register/register.component.css'
+  styleUrls: ['../register/register.component.css',
+  './login.component.css']
 })
 export class LoginComponent {
     phoneWarning = '';
