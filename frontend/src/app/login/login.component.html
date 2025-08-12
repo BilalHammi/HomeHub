@@ -1,3 +1,27 @@
-<app-navbar type="guest"></app-navbar>
-
-<p>login works!</p>
+<section>
+    <app-navbar type="guest"></app-navbar>
+    <section class="registerForm">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="under">
+            <h1>Welcome Back</h1>
+            <div class="under between">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" placeholder="Enter your e-mail" formControlName="email">
+                <p *ngIf="emailWarning" id="warning"> {{ emailWarning }}</p>
+            </div>
+            <div class="under between">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <div class="test">
+                    <fa-icon [icon]="faLockIcon" class="icon" (click)="showPassService(passwordInput)"></fa-icon>
+                    <input #passwordInput type="password" name="password" placeholder="Enter your password" formControlName="password">
+                    </div>
+                    <p *ngIf="passwordWarning" id="warning"> {{ passwordWarning }}</p>
+                </div>
+            </div>
+             <div class="between">
+                <input type="submit" value="Register">
+                <p>Dont have an account? <a href="#">Click here!</a></p>
+            </div>
+        </form>
+    </section>
+</section>

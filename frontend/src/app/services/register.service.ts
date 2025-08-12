@@ -14,18 +14,16 @@ export class RegisterCheck {
   phoneWarning = '';
   passwordWarning = '';
 
-
   public NameChecker(errors: ValidationErrors | null, key: string) {
-
     if (key === 'firstname') {
       this.firstnameWarning = '';
 
       if (errors) {
-        
         if (errors['required']) {
           this.firstnameWarning = 'Input cannot be empty!';
-        } else if(errors['pattern']) {          
-          this.firstnameWarning = 'Input cannot have numbers or special characters!';
+        } else if (errors['pattern']) {
+          this.firstnameWarning =
+            'Input cannot have numbers or special characters!';
         }
       }
     } else {
@@ -34,8 +32,9 @@ export class RegisterCheck {
       if (errors) {
         if (errors['required']) {
           this.lastnameWarning = 'Input cannot be empty!';
-        }  else if(errors['pattern']) {
-          this.lastnameWarning = 'Input cannot have numbers or special characters!';
+        } else if (errors['pattern']) {
+          this.lastnameWarning =
+            'Input cannot have numbers or special characters!';
         }
       }
     }
@@ -64,7 +63,7 @@ export class RegisterCheck {
       } else if (errors['maxlength']) {
         this.phoneWarning = `Phonenumber cannot exceed ${errors['maxlength'].requiredLength} digits! (currently ${errors['maxlength'].actualLength})`;
       } else if (errors['minlength']) {
-        this.phoneWarning = `Phonenumber must be at least ${errors['minlength'].requiredLength} digits! (currently ${errors['minlength'].actualLength})`
+        this.phoneWarning = `Phonenumber must be at least ${errors['minlength'].requiredLength} digits! (currently ${errors['minlength'].actualLength})`;
       }
     }
   }
@@ -86,19 +85,17 @@ export class RegisterCheck {
   public trimFunction(trimValue: FormGroup) {
     Object.keys(trimValue.controls).forEach((key) => {
       const value = trimValue.get(key)?.value || '';
-      trimValue
-        .get(key)
-        ?.setValue(value.trim(), { emitEvent: false });
+      trimValue.get(key)?.setValue(value.trim(), { emitEvent: false });
     });
   }
 
-   public showPass(inputHTML: any) {  
+  public showPass(inputHTML: any) {
     console.log(inputHTML.length);
-      
-      if (inputHTML.type === "password") {
-        inputHTML.setAttribute("type", "text");
-      } else {
-        inputHTML.setAttribute("type", "password");
-      }
+
+    if (inputHTML.type === 'password') {
+      inputHTML.setAttribute('type', 'text');
+    } else {
+      inputHTML.setAttribute('type', 'password');
     }
+  }
 }

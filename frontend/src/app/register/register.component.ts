@@ -59,7 +59,12 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    
+    this.phoneWarning = '';
+    this.passwordWarning = '';
+    this.firstnameWarning = '';
+    this.lastnameWarning = '';
+    this.emailWarning = '';
+
     this.registerService.trimFunction(this.registerForm);
 
     if (this.registerForm.valid) {
