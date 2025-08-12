@@ -13,7 +13,6 @@ export class RegisterCheck {
   emailWarning = '';
   phoneWarning = '';
   passwordWarning = '';
-  @ViewChild('passwordInput') passwordInput!: ElementRef<HTMLInputElement>;
 
 
   public NameChecker(errors: ValidationErrors | null, key: string) {

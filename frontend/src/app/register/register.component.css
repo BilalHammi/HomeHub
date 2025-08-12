@@ -2,17 +2,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.navbar {
-    margin-left: 5vw;
-    margin-right: 25px;
-    font-size: bold;
-    display: flex;
-}
-
-.navParent {
-    border-bottom: 1px rgb(229	232	235) solid;
-}
-
 img {
     width: 40px;
     height: 40px;
